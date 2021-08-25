@@ -1,15 +1,17 @@
 
 title: Adam Etches # your name (or website title) here
-logo: "/images/adametchesphoto.jpeg?raw=true" # your photo (or logo) here
+logo: "/images/adametchesphoto.png?raw=true" # your photo (or logo) here
 round-logo: true
 description: > 
-  Data Galore projects
+  <b>Git Pages:</b>   
+  Various projects and work looking at data science in the context of insight. I like to focus on: tools and techniques, data visualisation and the data to value pipline
   <br><br>
-  <a href="https://www.linkedin.com/in/adam-etches-4a58056/">View My LinkedIn Profile</a> 
+  <b>Personal Links:</b> 
   <br><br>
-  Publications
+  <a href="https://www.linkedin.com/in/adam-etches-4a58056/">View My LinkedIn Profile</a>
+  <br><br>
+  <a href="https://github.com/adametches">View My GitHub Profile</a>
 
-  <br><br>
 
 url-pretty: "https://adametches.github.io/"
 email: adam.etches@gmail.com
