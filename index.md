@@ -16,7 +16,7 @@
 ---
 [Data Cube Visualisation](/pages/datacube.md)
 
-Experiment with 3 dimensions, the following Jupyter example takes the gps output from my [Garmin Vivosport](https://support.garmin.com/en-US/?identifier=563441244&tab=topics) and an Ordnance Survey basemap plotting latitude and longitude on the (x,y) and time on the z axis. I compare this to the standard Garmin Connect output which using 2 dimensions highlights pace a a colour map [green to red]  
+Experiment with 3 dimensions, the following Jupyter example takes the gps output from my [Garmin Vivosport](https://support.garmin.com/en-US/?identifier=563441244&tab=topics) and an Ordnance Survey basemap plotting latitude and longitude on the x & y axes and time on the z axis. I compare this to the standard Garmin Connect output which, using 2 dimensions, highlights pace a a colour map [green to red]  
 
 | 3D Visualisation            | 2D Visualisation        |
 | :-----------:               | :-----------: |

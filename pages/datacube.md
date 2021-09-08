@@ -24,7 +24,7 @@ table.center {
 
 In this example I wanted to experiment with whether a space-time cube visualization would add any additional visual analytical qualities above a 2 dimensional (or 2.5 :smirk: ).
 
-For this illustrate I selected one of my morning runs where I usually like to analyse my running pace or rather lack of it. I always run with a GPS sports watch my current being the [Garmin Vivosport](https://support.garmin.com/en-US/?identifier=563441244&tab=topics) which is connected to my Garmin Connect account (more on this later)
+For this illustration I selected one of my morning runs where I usually like to analyse my running pace (or rather lack of it). I always run with a GPS sports watch, my current being the [Garmin Vivosport](https://support.garmin.com/en-US/?identifier=563441244&tab=topics) which is connected to my Garmin Connect account (more on this later).
 
 From Garmin Connect it's straightforward enough to download data for a specific run in a GPX file so this was my space-time source in the form of latitude, longitude and timestamp.
 
@@ -37,19 +37,19 @@ Then turning to Jupyter Lab, matlab and plotly I set about building the followin
     <p align="center">3d Datacube showing space-time</p>
 </table>
 
-In this visualization time is represented on the z access which is normalized to the start of the run at 0 seconds when this is overlaid with the spatial dimensions x and y represented as lat and long any change in pace is visualised by the changing of the gradient of the red line which is the path of the run.
+In this visualisation time is represented on the z axis which is normalised to the start of the run at 0 seconds. When this is overlaid with the spatial dimensions x and y represented as lat and long, any change in pace is visualised by the changing of the gradient of the red line which is the path of the run.
 
-Rotating the interactive data cube to an plan view where the z axis is perpendicular to the x,y access emphasizes any change in gradient.
+Rotating the interactive data cube to a plan view where the z axis is perpendicular to the x,y axes emphasizes any change in gradient.
 
 <a href="../jupyter/datacube.html"> View Source in Html </a>
 
 #### Conclusions
 
-Although an interesting exercise and a pretty visualization I honestly don't think the extra dimension add anything to the analysis. Compare the 3d to the 2d using a colour to present pace (this is a standard widget on the Garmin Connect App). Personally I much pefer the 2d view   
+Although an interesting exercise and a pretty visualisation I honestly don't think the extra dimension add anything to the analysis. Compare the 3d to the 2d using a colour to present pace (this is a standard widget on the Garmin Connect App). Personally I much pefer the 2d view   
 
 <table class="center">
     <a href="/pages/datacube.md"><img src="../images/datacube/2drunning.png"  /></a>
-    <p align="center">Standard Pace chart </p>
+    <p align="center">Standard Pace Chart </p>
 </table>
 
-All opinions 
+All opinions expressed are my own and based on my experiences with my own equipment.
