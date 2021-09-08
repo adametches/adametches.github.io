@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="css/md.css">
+
 ## Portfolio
 
 ---
@@ -18,7 +20,9 @@ Experiment with 3 dimensions, the following Jupyter example takes the gps output
 
 | 3D Visualisation            | 2D Visualisation        |
 | :-----------:               | :-----------: |
-| <a href="/html/adamgoesforarun.html"><img src="images/datacube/datacube.png"  /></a>      | <a href="/pages/datacube.md"><img src="images/datacube/2drunning.png"  /></a>       |
+
+| <a href="/jupyter/adamsrun.html"><img src="images/datacube/datacube.png"  class="inline-img"  /></a>      | <a href="/jupyter/adamsrun.html"><img src="images/datacube/2drunning.png" class="inline-img" /></a>       |
+
 
 
 
