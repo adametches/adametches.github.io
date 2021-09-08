@@ -1,7 +1,7 @@
 
 title: Adam Etches # your name (or website title) here
-logo: "/images/adametchesphoto.png?raw=true" # your photo (or logo) here
-round-logo: true
+logo: "/images/adametches21.png?raw=true" # your photo (or logo) here
+round-logo: false
 description: > 
   <b>Git Pages:</b><br>   
   Various projects and work looking at data science in the context of insight. I like to focus on: tools and techniques, data visualisation and the data to value pipline
