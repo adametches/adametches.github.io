@@ -24,4 +24,5 @@ google_analytics: UA-000000-0 # your Google Analytics tracking ID here
 author:
   name: Adam Etches
 
-
+# Google Analytics
+google_analytics: G-9WE0CQ9VLH
