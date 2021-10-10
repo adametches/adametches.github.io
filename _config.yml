@@ -1,4 +1,5 @@
 
+
 title: Adam Etches # your name (or website title) here
 logo: "/images/adametches21.png?raw=true" # your photo (or logo) here
 round-logo: false
@@ -22,4 +23,6 @@ google_analytics: UA-000000-0 # your Google Analytics tracking ID here
 
 author:
   name: Adam Etches
-  picture: "/images/adametchesphoto.jpeg?raw=true"
+
+# Google Analytics
+google_analytics: UA-209490186-1
