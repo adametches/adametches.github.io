@@ -3,7 +3,34 @@
 <head><meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>simple-pipeline</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>simple-pipeline</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script><script>
+(function() {
+  function addWidgetsRenderer() {
+    var mimeElement = document.querySelector('script[type="application/vnd.jupyter.widget-view+json"]');
+    var scriptElement = document.createElement('script');
+    
+    var widgetRendererSrc = 'https://unpkg.com/@jupyter-widgets/html-manager@*/dist/embed-amd.js';
+    
+    var widgetState;
+
+    // Fallback for older version:
+    try {
+      widgetState = mimeElement && JSON.parse(mimeElement.innerHTML);
+
+      if (widgetState && (widgetState.version_major < 2 || !widgetState.version_major)) {
+        
+        var widgetRendererSrc = 'https://unpkg.com/@jupyter-js-widgets@*/dist/embed.js';
+        
+      }
+    } catch(e) {}
+
+    scriptElement.src = widgetRendererSrc;
+    document.body.appendChild(scriptElement);
+  }
+
+  document.addEventListener('DOMContentLoaded', addWidgetsRenderer);
+}());
+</script>
 
 
 
@@ -14515,7 +14542,7 @@ a.anchor-link {
 <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[29]:</div>
+
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># IMPORTS</span>
@@ -14552,7 +14579,7 @@ a.anchor-link {
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[30]:</div>
+
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Pipes</span>
@@ -14577,19 +14604,14 @@ a.anchor-link {
 
 <div class="jp-Cell-outputWrapper">
 
-
 <div class="jp-OutputArea jp-Cell-outputArea">
 
 <div class="jp-OutputArea-child">
 
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[30]:</div>
-
-
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>&lt;spacy_entity_linker.EntityLinker.EntityLinker at 0x1af62ddf0&gt;</pre>
+<pre>&lt;spacy_entity_linker.EntityLinker.EntityLinker at 0x1b1a09f40&gt;</pre>
 </div>
 
 </div>
@@ -14601,7 +14623,7 @@ a.anchor-link {
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[31]:</div>
+
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Example text to process</span>
@@ -14621,14 +14643,9 @@ a.anchor-link {
 
 <div class="jp-Cell-outputWrapper">
 
-
 <div class="jp-OutputArea jp-Cell-outputArea">
 
 <div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
 
 
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output " data-mime-type="text/html">
@@ -14664,7 +14681,7 @@ a.anchor-link {
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[32]:</div>
+
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Build co-reference looup</span>
@@ -14689,7 +14706,7 @@ a.anchor-link {
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[36]:</div>
+
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Enrich on Spacy entities using wiki data</span>
@@ -14724,10 +14741,10 @@ a.anchor-link {
 </div>
 </div>
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[37]:</div>
+
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># BUILD KNOWLEDGE GRAPH and RELATIONSHIP EXTRACTION</span>
@@ -14782,33 +14799,10 @@ a.anchor-link {
 </div>
 </div>
 
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>Robert Jackson was born Ely
-Robert Jackson is painter
-Robert Jackson lives Cromer
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[38]:</div>
+
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">ipycytoscape_obj</span> <span class="o">=</span> <span class="n">ipycytoscape</span><span class="o">.</span><span class="n">CytoscapeWidget</span><span class="p">()</span>
@@ -14829,26 +14823,21 @@ Robert Jackson lives Cromer
 
 <div class="jp-Cell-outputWrapper">
 
-
 <div class="jp-OutputArea jp-Cell-outputArea">
 
 <div class="jp-OutputArea-child">
 
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
 
 
 
-
-
-<div id="1da6502a-997d-4313-accb-95c4a7bdd75a" class="jupyter-widgets jp-OutputArea-output ">
+<div id="2b038713-5403-49c0-a038-7044af8be1e5" class="jupyter-widgets jp-OutputArea-output ">
 <script type="text/javascript">
-var element = document.getElementById('1da6502a-997d-4313-accb-95c4a7bdd75a');
+var element = document.getElementById('2b038713-5403-49c0-a038-7044af8be1e5');
 </script>
 <script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "af7bd984e9f44e90a5e86217563c5069", "version_major": 2, "version_minor": 0}
+{"version_major": 2, "version_minor": 0, "model_id": "613c00ac2be6483ea1e7a7df92039837"}
 </script>
 </div>
 
@@ -14861,7 +14850,7 @@ var element = document.getElementById('1da6502a-997d-4313-accb-95c4a7bdd75a');
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span> 
@@ -14879,6 +14868,10 @@ var element = document.getElementById('1da6502a-997d-4313-accb-95c4a7bdd75a');
 
 
 
+
+<script type="application/vnd.jupyter.widget-state+json">
+{"state": {"f629b304c9f24344b293b1e9877a35aa": {"model_name": "GraphModel", "model_module": "jupyter-cytoscape", "model_module_version": "^1.2.2", "state": {"_adj": {}, "_model_module": "jupyter-cytoscape", "_model_module_version": "^1.2.2", "_model_name": "GraphModel", "_view_count": null, "_view_module": "jupyter-cytoscape", "_view_module_version": "^1.2.2", "_view_name": null, "edges": [], "nodes": []}}, "daffea090b424f328b101298e5c698b7": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "613c00ac2be6483ea1e7a7df92039837": {"model_name": "CytoscapeModel", "model_module": "jupyter-cytoscape", "model_module_version": "^1.2.2", "state": {"_dom_classes": [], "_interaction_handlers": {}, "_model_module": "jupyter-cytoscape", "_model_module_version": "^1.2.2", "_model_name": "CytoscapeModel", "_view_count": null, "_view_module": "jupyter-cytoscape", "_view_module_version": "^1.2.2", "_view_name": "CytoscapeView", "auto_ungrabify": false, "auto_unselectify": true, "autolock": false, "box_selection_enabled": false, "cytoscape_layout": {"name": "cola"}, "cytoscape_style": [{"selector": "node", "css": {"background-image": "url(https://data.etches.uk/img/circle-30.png)", "content": "data(label)", "font-family": "arial", "font-size": "10px", "text-valign": "bottom", "text-halign": "center", "text-wrap": "wrap", "text-max-width": 100, "border-width": 0.0, "text-margin-y": 5, "background-fit": "cover", "background-color": "white", "foreground-color": "white", "background-clip": "node"}}, {"selector": "node[type = \"PERSON\"]", "css": {"background-image": "url(https://data.etches.uk/img/person-48.png)"}}, {"selector": "node[type = \"city\"]", "css": {"background-image": "url(https://data.etches.uk/img/place-30.png)"}}, {"selector": "node[type = \"town\"]", "css": {"background-image": "url(https://data.etches.uk/img/place-30.png)"}}, {"selector": "node[type = \"profession\"]", "css": {"background-image": "url(https://data.etches.uk/img/occupation-30.png)"}}, {"selector": "node[type = \"PLACE\"]", "css": {"content": "data(label)", "font-family": "arial", "font-size": "10px", "text-valign": "bottom", "text-halign": "center", "background-image": "url(https://data.etches.uk/svg/bank.svg)", "background-fit": "cover", "background-color": "white", "background-clip": "node", "text-wrap": "wrap", "text-max-width": 100, "text-margin-y": 5}}, {"selector": "node[type = \"GPE\"]", "css": {"content": "data(label)", "font-family": "arial", "font-size": "10px", "text-valign": "bottom", "text-halign": "center", "background-image": "url(https://data.etches.uk/svg/circle-location-arrow.svg)", "background-fit": "cover", "background-color": "white", "background-clip": "none", "text-wrap": "wrap", "text-max-width": 100, "text-margin-y": 5}}, {"selector": "node[type = \"DATE\"]", "css": {"content": "data(label)", "font-family": "arial", "font-size": "10px", "text-valign": "bottom", "text-halign": "center", "background-image": "url(https://data.etches.uk/svg/circle-calendar.svg)", "background-fit": "cover", "background-color": "white", "background-clip": "none", "text-wrap": "wrap", "text-max-width": 100, "text-margin-y": 5}}, {"selector": "edge", "css": {"content": "data(label)", "font-family": "arial", "font-size": "10px", "text-rotation": "autorotate", "text-margin-y": 10}}], "desktop_tap_threshold": 4, "graph": "IPY_MODEL_b377b86970b84eb48676a7bb0004f61c", "headless": false, "hide_edges_on_viewport": false, "layout": "IPY_MODEL_daffea090b424f328b101298e5c698b7", "max_zoom": 1e+50, "min_zoom": 1e-50, "motion_blur": false, "motion_blur_opacity": 0.2, "panning_enabled": true, "pixel_ratio": "auto", "rendered_position": {"renderedPosition": {"x": 100, "y": 100}}, "selection_type": "single", "style_enabled": true, "texture_on_viewport": false, "tooltip_source": "tooltip", "touch_tap_threshold": 8, "user_panning_enabled": true, "user_zooming_enabled": true, "wheel_sensitivity": 1.0, "zoom": 2.0, "zooming_enabled": true}}, "b377b86970b84eb48676a7bb0004f61c": {"model_name": "GraphModel", "model_module": "jupyter-cytoscape", "model_module_version": "^1.2.2", "state": {"_adj": {"Robert Jackson": {}, "Ely": {}, "painter": {}, "Cromer": {}}, "_model_module": "jupyter-cytoscape", "_model_module_version": "^1.2.2", "_model_name": "GraphModel", "_view_count": null, "_view_module": "jupyter-cytoscape", "_view_module_version": "^1.2.2", "_view_name": null, "edges": ["IPY_MODEL_a84348f89658456e91637e50c63bc71a", "IPY_MODEL_1fa3446a85f84e19a9c5aa80a48194c2", "IPY_MODEL_21dacce5c0994e67a10811f9f42304dc"], "nodes": ["IPY_MODEL_30fea4bfa9e24e9195b1592f81d33afa", "IPY_MODEL_cbdad39abd0e4dacbd1e6f2c712b7927", "IPY_MODEL_dd4c778ad2ae43d3b67b007fd78222dc", "IPY_MODEL_79bee91c76e64919841699dc7e3ab46d"]}}, "30fea4bfa9e24e9195b1592f81d33afa": {"model_name": "NodeModel", "model_module": "jupyter-cytoscape", "model_module_version": "^1.2.2", "state": {"_model_module": "jupyter-cytoscape", "_model_module_version": "^1.2.2", "_model_name": "NodeModel", "_view_count": null, "_view_module": "jupyter-cytoscape", "_view_module_version": "^1.2.2", "_view_name": "NodeView", "classes": "", "data": {"id": "Robert Jackson", "label": "Robert Jackson\n\u2023 PERSON", "type": "PERSON"}, "grabbable": true, "grabbed": false, "locked": false, "pannable": false, "position": {}, "removed": false, "selectable": false, "selected": false}}, "cbdad39abd0e4dacbd1e6f2c712b7927": {"model_name": "NodeModel", "model_module": "jupyter-cytoscape", "model_module_version": "^1.2.2", "state": {"_model_module": "jupyter-cytoscape", "_model_module_version": "^1.2.2", "_model_name": "NodeModel", "_view_count": null, "_view_module": "jupyter-cytoscape", "_view_module_version": "^1.2.2", "_view_name": "NodeView", "classes": "", "data": {"id": "Ely", "label": "Ely\n\u2023 city", "type": "city"}, "grabbable": true, "grabbed": false, "locked": false, "pannable": false, "position": {}, "removed": false, "selectable": false, "selected": false}}, "dd4c778ad2ae43d3b67b007fd78222dc": {"model_name": "NodeModel", "model_module": "jupyter-cytoscape", "model_module_version": "^1.2.2", "state": {"_model_module": "jupyter-cytoscape", "_model_module_version": "^1.2.2", "_model_name": "NodeModel", "_view_count": null, "_view_module": "jupyter-cytoscape", "_view_module_version": "^1.2.2", "_view_name": "NodeView", "classes": "", "data": {"id": "painter", "label": "painter\n\u2023 profession", "type": "profession"}, "grabbable": true, "grabbed": false, "locked": false, "pannable": false, "position": {}, "removed": false, "selectable": false, "selected": false}}, "79bee91c76e64919841699dc7e3ab46d": {"model_name": "NodeModel", "model_module": "jupyter-cytoscape", "model_module_version": "^1.2.2", "state": {"_model_module": "jupyter-cytoscape", "_model_module_version": "^1.2.2", "_model_name": "NodeModel", "_view_count": null, "_view_module": "jupyter-cytoscape", "_view_module_version": "^1.2.2", "_view_name": "NodeView", "classes": "", "data": {"id": "Cromer", "label": "Cromer\n\u2023 town", "type": "town"}, "grabbable": true, "grabbed": false, "locked": false, "pannable": false, "position": {}, "removed": false, "selectable": false, "selected": false}}, "a84348f89658456e91637e50c63bc71a": {"model_name": "EdgeModel", "model_module": "jupyter-cytoscape", "model_module_version": "^1.2.2", "state": {"_model_module": "jupyter-cytoscape", "_model_module_version": "^1.2.2", "_model_name": "EdgeModel", "_view_count": null, "_view_module": "jupyter-cytoscape", "_view_module_version": "^1.2.2", "_view_name": "EdgeView", "classes": " directed ", "data": {"source": "Robert Jackson", "target": "Ely", "label": "was born"}, "pannable": true, "removed": false, "selectable": false, "selected": false}}, "1fa3446a85f84e19a9c5aa80a48194c2": {"model_name": "EdgeModel", "model_module": "jupyter-cytoscape", "model_module_version": "^1.2.2", "state": {"_model_module": "jupyter-cytoscape", "_model_module_version": "^1.2.2", "_model_name": "EdgeModel", "_view_count": null, "_view_module": "jupyter-cytoscape", "_view_module_version": "^1.2.2", "_view_name": "EdgeView", "classes": " directed ", "data": {"source": "Robert Jackson", "target": "painter", "label": "is"}, "pannable": true, "removed": false, "selectable": false, "selected": false}}, "21dacce5c0994e67a10811f9f42304dc": {"model_name": "EdgeModel", "model_module": "jupyter-cytoscape", "model_module_version": "^1.2.2", "state": {"_model_module": "jupyter-cytoscape", "_model_module_version": "^1.2.2", "_model_name": "EdgeModel", "_view_count": null, "_view_module": "jupyter-cytoscape", "_view_module_version": "^1.2.2", "_view_name": "EdgeView", "classes": " directed ", "data": {"source": "Robert Jackson", "target": "Cromer", "label": "lives"}, "pannable": true, "removed": false, "selectable": false, "selected": false}}}, "version_major": 2, "version_minor": 0}
+</script>
 
 
 </html>

@@ -1,13 +1,24 @@
-## Link Analysis with NLP using Spacey
+## Knowledge Graph Building from NLP using Spacy
 ---
 
-<script>
+A simple example of producing a knowledge graph using NLP the example uses the following tooling:
+  - Jupyter Labs and Python
+  - Spacy NLP
+  - Networkx
 
-</script>
+In this example I take a low effort approach by using off-the-shelf models and tooling. I wanted to evaluate the default models in Spacy to process a document with the following processing pipeline:
+
+1. Named Entity Extraction NER
+2. Co-reference resolution 
+3. Semantic type enhancement using wikidata
+4. Relationship extraction
+5. Create NetworkX graph
+
+From a limited set of control data the output is reasonable it's a simple model so could be extended but for a small about of code <a href="../jupyter/simple-pipeline.html"> View Source in Html </a> 
+
+### Document Input
+<iframe src="../html/simplepipelineinput.html" title="Simple Pipline Input" style="border:none;" width="100%" height="100px"></iframe>
 
 
-<iframe src="../html/simplepiplineinput.html" title="Simple Pipline Input" width="100%"></iframe>
-
-<iframe src="../html/adamgoesforarun.html"></iframe>
-
-
+### Knowledge Graph Output
+<iframe src="../html/simplepipelineoutput.html" title="Simple Pipline Input" style="border:none;" width="100%" height="400px"></iframe>
