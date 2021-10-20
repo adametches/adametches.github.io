@@ -14,9 +14,13 @@
 - [Analytic Technology Industry Roundtable Study: Analytics and Use Cases (Mitre)](http://www.technologyroundtable.org/pdfs/Analytics_and_Use_Cases_Study_IBM_SAS_11_25_16.pdf)
 
 ---
-[Link Analysis with NLP using Spacey](/pages/linkanalysisNLP.md)
+[Knowledge Graph Building from NLP using Spacy](/pages/linkanalysisNLP.md)
 
-Link Analysis with NLP using Spacey
+A simple evaluation looking how off-the-shelf NLP models and tools can be used to produce a Knowledge Graph. Large amounts of data are in an 'unstructured' or semi-structured format and to run conventional Link Analysis analytics requires the data to be processed into a structured format. To achieve this transformation I have defined the following processing pipeline
+
+**Named Entity Extraction -> Co-reference Resolution -> Semantic type assignment -> Relationship Extraction -> Knowledge Graph**
+
+<iframe src="../html/simplepipelineoutput.html" title="Simple Pipline Input" style="border:none;" width="100%" height="400px"></iframe>
 
 ---
 
