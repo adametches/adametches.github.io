@@ -14,7 +14,7 @@ In this example I take a low effort approach by using off-the-shelf models and t
 4. Relationship extraction
 5. Create NetworkX graph
 
-From a limited set of control data the output is reasonable it's a simple model so could be extended but for a small about of code <a href="../jupyter/simple-pipeline.html"> View Source in Html </a> 
+From a limited set of control data and a small amount of code the output is reasonable. It's a simple model so could be extended <a href="../jupyter/simple-pipeline.html"> View Source in Html </a> 
 
 ### Document Input
 <iframe src="../html/simplepipelineinput.html" title="Simple Pipline Input" style="border:none;" width="100%" height="100px"></iframe>
