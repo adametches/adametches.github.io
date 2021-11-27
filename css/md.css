@@ -4,3 +4,12 @@
   height: 200px;
   width: 300px;
 }
+
+
+.inline-gif {
+  border: 2px solid rgba(216, 213, 213, 0.541);
+  width: 95%;
+
+  object-fit: scale-down;
+}
+

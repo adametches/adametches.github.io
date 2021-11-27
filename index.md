@@ -14,6 +14,14 @@
 - [Analytic Technology Industry Roundtable Study: Analytics and Use Cases (Mitre)](http://www.technologyroundtable.org/pdfs/Analytics_and_Use_Cases_Study_IBM_SAS_11_25_16.pdf)
 
 ---
+[Analyzing Social Media Privacy ](/pages/socialMediaPrivacy.md)
+
+Even with increased awareness of online privacy and security I wanted to see if the unsuspecting public are still leaking private information via a social media online presence.
+<div>
+<img class="inline-gif" src="images/socialmedia/socialmedia.gif"   />
+</div>
+
+---
 [Knowledge Graph Building from NLP using Spacy](/pages/linkanalysisNLP.md)
 
 A simple evaluation looking how off-the-shelf NLP models and tools can be used to produce a Knowledge Graph. Large amounts of data are in an 'unstructured' or semi-structured format and to run conventional Link Analysis analytics requires the data to be processed into a structured format. To achieve this transformation I have defined the following processing pipeline
