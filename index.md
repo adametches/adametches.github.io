@@ -16,7 +16,10 @@
 ---
 [Analyzing Social Media Privacy ](/pages/socialMediaPrivacy.md)
 
-Even with increased awareness of online privacy and security I wanted to see if the unsuspecting public are still leaking private information via a social media online presence.
+With increasing awareness of online privacy and security, there are still many details that users share on their social media profiles that could be considered personal, and therefore potentially putting privacy at risk.  I wanted to see how prevalent this is, and to quickly gain an understanding of trends regarding information shared.  
+
+A statistical approach allows us to form a picture of to what extent social media users are, perhaps unwittingly, sharing personal information.
+
 <div>
 <img class="inline-gif" src="images/socialmedia/socialmedia.gif"   />
 </div>
