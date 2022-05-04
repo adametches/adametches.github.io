@@ -14,15 +14,10 @@
 - [Analytic Technology Industry Roundtable Study: Analytics and Use Cases (Mitre)](http://www.technologyroundtable.org/pdfs/Analytics_and_Use_Cases_Study_IBM_SAS_11_25_16.pdf)
 
 ---
-[Analyzing Social Media Privacy ](/pages/socialMediaPrivacy.md)
+[Advent of Code 2021 ](/pages/socialMediaPrivacy.md)
 
-With increasing awareness of online privacy and security, there are still many details that users share on their social media profiles that could be considered personal, and therefore potentially putting privacy at risk.  I wanted to see how prevalent this is, and to quickly gain an understanding of trends regarding information shared.  
+Just for some fun I took part in a team challenge on the <a href=https://adventofcode.com/ target="_blank">Advent of Code</a> which is 31 day coding challenge which this year was loosely based around a submarine journey. I decided to complete the coding challenges in JavaScript as I wanted to provide web host runnable solution code on my own site @ <a href="https://advent21.etches.uk/" target="_blank">advent21.etches.uk</a> 
 
-A statistical approach allows us to form a picture of to what extent social media users are, perhaps unwittingly, sharing personal information.
-
-<div>
-<img class="inline-gif" src="images/socialmedia/socialmedia.gif"   />
-</div>
 
 ---
 [Knowledge Graph Building from NLP using Spacy](/pages/linkanalysisNLP.md)
