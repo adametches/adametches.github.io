@@ -14,12 +14,6 @@
 - [Analytic Technology Industry Roundtable Study: Analytics and Use Cases (Mitre)](http://www.technologyroundtable.org/pdfs/Analytics_and_Use_Cases_Study_IBM_SAS_11_25_16.pdf)
 
 ---
-[Advent of Code 2021 ](/pages/socialMediaPrivacy.md)
-
-Just for some fun I took part in a team challenge on the <a href=https://adventofcode.com/ target="_blank">Advent of Code</a> which is 31 day coding challenge which this year was loosely based around a submarine journey. I decided to complete the coding challenges in JavaScript as I wanted to provide web host runnable solution code on my own site @ <a href="https://advent21.etches.uk/" target="_blank">advent21.etches.uk</a> 
-
-
----
 [Knowledge Graph Building from NLP using Spacy](/pages/linkanalysisNLP.md)
 
 A simple evaluation looking how off-the-shelf NLP models and tools can be used to produce a Knowledge Graph. Large amounts of data are in an 'unstructured' or semi-structured format and to run conventional Link Analysis analytics requires the data to be processed into a structured format. To achieve this transformation I have defined the following processing pipeline
